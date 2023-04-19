@@ -1,7 +1,10 @@
-import axios from "axios";
+import axios from 'axios'
 
-const API = axios.create({ baseURL: "http://localhost:5000/api/v1/applicants" });
+const API = axios.create({ baseURL: 'http://localhost:5000/api/v1/applicants' })
 
-export const createTranscript =  (formData) => API.post("/createtranscript", formData);
+export const createTranscript = (formData) =>
+  API.post('/createtranscript', formData)
 
-export const getAllApplicants = () => API.get('/getallapplications');
+export const getAllApplicants = () => API.get('/getallapplications')
+
+export const uploadFile = () => API.post('/upload')

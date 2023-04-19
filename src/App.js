@@ -7,6 +7,7 @@ import Login from './components/Login'
 import Procedure from './components/Procedure'
 import AdminHome from './components/AdminHome'
 import Template1 from './templates/Template1'
+import Template2 from './templates/Template2'
 
 const App = () => {
   const user = useSelector((state) => state)
@@ -26,7 +27,9 @@ const App = () => {
           element={role === 'admin' ? <Navigate to='/admin/home' /> : <Login />}
         />
         <Route exact path='/form' element={<Checkout />} />
-        <Route exact path='/procedure' element={<Template1 />} />
+        <Route exact path='/procedure' element={<Procedure />} />
+        <Route exact path='/temp1' element={<Template1 />} />
+        <Route exact path='/temp2' element={<Template2 />} />
 
         <Route
           exact

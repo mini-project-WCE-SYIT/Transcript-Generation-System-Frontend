@@ -15,20 +15,23 @@ body{
 .nav {
   background-color: #161b22;
 }
-
+.mainDiv {
+  height: 90vh;
+  display: flex;
+  row-gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .home {
   color: black;
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
   border: 1px solid gray;
   width: 60vw;
   height: 60vh;
 }
 .home-header {
   display: flex;
-  /* border: 1px solid gray; */
+  /* border: 10px solid gray; */
   background-color: #161b22;
   height: 3rem;
 }
@@ -90,9 +93,31 @@ body{
   font-size: medium;
 }
 
+.buttonContainer {
+  width: 60vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .sub-two {
   width: 15rem;
 }
+.file-upload-label {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+}
+
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 500px) {
   .home {
     width: 95vw;

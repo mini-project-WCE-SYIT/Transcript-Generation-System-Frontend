@@ -1,17 +1,16 @@
 import React from 'react'
 import './template.css'
 import { ReactDOM } from 'react'
+import wcelogo from '../components/wcelogo.png'
+import logo from './75logo.jpeg'
+import tele from './telephone.png'
 
 const Template = () => {
   return (
     <>
       <div className='main'>
         <div className='first'>
-          <img
-            src={process.env.PUBLIC_URL + '/wcelogo.png'}
-            alt='mypic'
-            className='logo'
-          />
+          <img src={wcelogo} alt='mypic' className='logo' />
         </div>
         <div>
           <h2 className='head'>Walchand College of Engineering</h2>
@@ -20,22 +19,14 @@ const Template = () => {
           <p>Website: www.walchandsangli.ac.in</p>
         </div>
         <div className='second'>
-          <img
-            src={process.env.PUBLIC_URL + './75logo.jpeg'}
-            alt='mypic'
-            className='logo'
-          />
+          <img src={logo} alt='mypic' className='logo' />
         </div>
       </div>
       <div className='height'>
         <hr className='hr'></hr>
         <div className='middle'>
           <div className='page'>
-            <img
-              src={process.env.PUBLIC_URL + './telephone.png'}
-              alt='mypic'
-              className='tele'
-            />
+            <img src={tele} alt='mypic' className='tele' />
           </div>
           <div>
             <p> Email : info@walchandsangli.ac.in</p>

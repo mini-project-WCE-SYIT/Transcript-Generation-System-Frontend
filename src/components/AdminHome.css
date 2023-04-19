@@ -20,7 +20,7 @@ body{
   display: flex;
   row-gap: 2rem;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 5rem;
   align-items: center;
 }
 .home {
@@ -96,9 +96,23 @@ body{
 .buttonContainer {
   width: 60vw;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-end;
+}
+.popUp {
+  display: none;
 }
 
+.popUp img {
+  width: 10rem;
+  margin-right: 0rem;
+}
+
+.buttonContainer:hover .popUp {
+  display: block;
+  /* border: #0d1117 2px solid; */
+}
 .sub-two {
   width: 15rem;
 }

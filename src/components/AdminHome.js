@@ -5,6 +5,7 @@ import Appbar from './Utils/Appbar'
 import './AdminHome.css'
 import * as API from '../API/FormRequest'
 import * as XLSX from 'xlsx'
+import popUp from '../Images/popUp.png'
 
 function AdminHome() {
   const [applicants, setApplicants] = React.useState([])
@@ -97,19 +98,24 @@ function AdminHome() {
             </div>
           </div>
           <div className='buttonContainer'>
-            <label for='file-upload' class='file-upload-label'>
-              Add Sheet
-            </label>
-            <input
-              type='file'
-              value={fileUpload}
-              onChange={(e) => {
-                setFileupload(e.target.value)
-                handleFileUpload(e)
-              }}
-              id='file-upload'
-              class='hidden'
-            />
+            <div className='excelBtn'>
+              <label for='file-upload' class='file-upload-label'>
+                Add Sheet
+              </label>
+              <input
+                type='file'
+                value={fileUpload}
+                onChange={(e) => {
+                  setFileupload(e.target.value)
+                  handleFileUpload(e)
+                }}
+                id='file-upload'
+                class='hidden'
+              />
+            </div>
+            <div className='popUp'>
+              <img src={popUp} alt='' />
+            </div>
           </div>
         </div>
       </>

@@ -149,3 +149,28 @@ body{
     margin: 4px;
   }
 }
+.PrintBtn {
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: #19fe00;
+  border-radius: 0.5rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+.home {
+  overflow-y: auto;
+}
+.NextBtn {
+  margin: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  background-color: #1fa5ff;
+  border-radius: 0.5rem;
+  font-weight: 900;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 1rem;
+}

@@ -8,6 +8,7 @@ import Procedure from './components/Procedure'
 import AdminHome from './components/AdminHome'
 import Template1 from './templates/Template1'
 import Template2 from './templates/Template2'
+import ShowTranscript from './components/ShowTranscript'
 
 const App = () => {
   const user = useSelector((state) => state)
@@ -28,9 +29,9 @@ const App = () => {
         />
         <Route exact path='/form' element={<Checkout />} />
         <Route exact path='/procedure' element={<Procedure />} />
-        <Route exact path='/temp1' element={<Template1 />} />
+        <Route exact path='/temp1' element={<ShowTranscript />} />
+        {/* <Route exact path='/temp1' element={<Template1 />} /> */}
         <Route exact path='/temp2' element={<Template2 />} />
-
         <Route
           exact
           path='/admin/home'

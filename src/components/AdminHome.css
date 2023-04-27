@@ -20,7 +20,7 @@ body{
   display: flex;
   row-gap: 2rem;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 5rem;
   align-items: center;
 }
 .home {
@@ -96,9 +96,23 @@ body{
 .buttonContainer {
   width: 60vw;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-end;
+}
+.popUp {
+  display: none;
 }
 
+.popUp img {
+  width: 10rem;
+  margin-right: 0rem;
+}
+
+.buttonContainer:hover .popUp {
+  display: block;
+  /* border: #0d1117 2px solid; */
+}
 .sub-two {
   width: 15rem;
 }
@@ -134,4 +148,29 @@ body{
   .open {
     margin: 4px;
   }
+}
+.PrintBtn {
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: #19fe00;
+  border-radius: 0.5rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+.home {
+  overflow-y: auto;
+}
+.NextBtn {
+  margin: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  background-color: #1fa5ff;
+  border-radius: 0.5rem;
+  font-weight: 900;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 1rem;
 }

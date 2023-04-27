@@ -1,0 +1,14 @@
+.transcriptMain {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(214, 214, 214);
+}
+
+.transcrpit {
+  width: 50vw;
+  height: 95vh;
+  border: 2px solid rgb(116, 116, 116);
+}

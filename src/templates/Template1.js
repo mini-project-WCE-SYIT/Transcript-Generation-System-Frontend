@@ -4,8 +4,10 @@ import { ReactDOM } from 'react'
 import wcelogo from '../components/wcelogo.png'
 import logo from './75logo.jpeg'
 import tele from './telephone.png'
+import { json } from 'react-router-dom'
 
-const Template = () => {
+const Template = ({ jsonData, applicants }) => {
+  console.log('jsonData', jsonData)
   return (
     <>
       <div className='main'>
@@ -39,15 +41,18 @@ const Template = () => {
       </div>
       <div className='name'>
         <p>
-          Name: <b>Mr. Gorule Shubham Nishikant Swati</b>
+          Name:{' '}
+          <b>
+            {applicants[0].firstName} {applicants[0].lastName}
+          </b>
         </p>
         <p>
-          Examination Seat Number: <b>2017BTEME00068</b>
+          Examination Seat Number: <b>{applicants[0].prn}</b>
         </p>
       </div>
       <table border={2} className='table' style={{ textAlign: 'center' }}>
         <caption className='head'>
-          <b>B.Tech.Mechanical Engineering</b>
+          <b>B.Tech. {applicants[0].branch}</b>
         </caption>
         <tr>
           <th rowSpan={2}> Course code </th>
@@ -67,207 +72,41 @@ const Template = () => {
         <tr>
           <th colSpan={8}>First Year:(2017-2018) SEM-I</th>
         </tr>
-        <tr>
-          <td>3PH101</td>
-          <td>Engineering Physics</td>
-          <td>3</td>
-          <td>--</td>
-          <td>--</td>
-          <td>3</td>
-          <td>BB</td>
-        </tr>
-        <tr>
-          <td>3MA101</td>
-          <td>Engineering Mathematics I</td>
-          <td>3</td>
-          <td>1</td>
-          <td>--</td>
-          <td>4</td>
-          <td>BC</td>
-        </tr>
-        <tr>
-          <td>3CV101</td>
-          <td>Basic Civil Engineering</td>
-          <td>3</td>
-          <td>--</td>
-          <td>--</td>
-          <td>3</td>
-          <td>CC</td>
-        </tr>
-        <tr>
-          <td>3ME102</td>
-          <td>Basic Mechanical Engineering</td>
-          <td>3</td>
-          <td>--</td>
-          <td>--</td>
-          <td>3</td>
-          <td>BB</td>
-        </tr>
-        <tr>
-          <td>3EN101</td>
-          <td>Basic Electronics Engineering</td>
-          <td>3</td>
-          <td>--</td>
-          <td>--</td>
-          <td>3</td>
-          <td>BB</td>
-        </tr>
-        <tr>
-          <td>3CS101</td>
-          <td>Computer Programming</td>
-          <td>2</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>CC</td>
-        </tr>
-        <tr>
-          <td>3BS103</td>
-          <td>Material Science</td>
-          <td>2</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>AB</td>
-        </tr>
-        <tr>
-          <td>3PH151</td>
-          <td>Engineering Physics Lab</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>1</td>
-          <td>AB</td>
-        </tr>
-        <tr>
-          <td>3CV151</td>
-          <td>Civil Engineering Lab</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>1</td>
-          <td>AB</td>
-        </tr>
-        <tr>
-          <td>3CS151</td>
-          <td>Computer Programming Lab</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>1</td>
-          <td>AB</td>
-        </tr>
-        <tr>
-          <td>3ME152</td>
-          <td>Mechanical Workshop/Lab</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>1</td>
-          <td>AB</td>
-        </tr>
-        <tr>
-          <td>3EN151</td>
-          <td>Electronics Engineering LAb</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>1</td>
-          <td>AA</td>
-        </tr>
+        {jsonData &&
+          jsonData.map((data) => {
+            if (data.sem === 1) {
+              return (
+                <tr>
+                  <td>{data.courseCode.toUpperCase()}</td>
+                  <td>{data.courseName}</td>
+                  <td>{data.lec === 0 ? '--' : data.lec}</td>
+                  <td>{data.tut === 0 ? '--' : data.tut}</td>
+                  <td>{data.practice === 0 ? '--' : data.practice}</td>
+                  <td>{data.creds === 0 ? '--' : data.creds}</td>
+                  <td>{data.grades === 0 ? '--' : data.grades}</td>
+                </tr>
+              )
+            }
+          })}
         <tr>
           <th colSpan={8}>First Year:(2017-2018) SEM-II</th>
         </tr>
-        <tr>
-          <td>3CH101</td>
-          <td>Engineering Chemistry</td>
-          <td>3</td>
-          <td>--</td>
-          <td>--</td>
-          <td>3</td>
-          <td>CC</td>
-        </tr>
-        <tr>
-          <td>3MA102</td>
-          <td>Engineering Mathematics II</td>
-          <td>3</td>
-          <td>1</td>
-          <td>--</td>
-          <td>4</td>
-          <td>BB</td>
-        </tr>
-        <tr>
-          <td>3AM101</td>
-          <td>Engineering Mechanics</td>
-          <td>3</td>
-          <td>--</td>
-          <td>--</td>
-          <td>3</td>
-          <td>BC</td>
-        </tr>
-        <tr>
-          <td>3ME101</td>
-          <td>Engineering Graphics</td>
-          <td>3</td>
-          <td>--</td>
-          <td>--</td>
-          <td>3</td>
-          <td>AB</td>
-        </tr>
-        <tr>
-          <td>3EL101</td>
-          <td>Basic Electrical Engineering</td>
-          <td>3</td>
-          <td>--</td>
-          <td>--</td>
-          <td>3</td>
-          <td>BC</td>
-        </tr>
-        <tr>
-          <td>3HS102</td>
-          <td>Foreign Language</td>
-          <td>2</td>
-          <td>1</td>
-          <td>--</td>
-          <td>3</td>
-          <td>BC</td>
-        </tr>
-        <tr>
-          <td>3CH151</td>
-          <td>Engineering Chemistry Lab</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>1</td>
-          <td>AB</td>
-        </tr>
-        <tr>
-          <td>3AM151</td>
-          <td>Engineering Mechanics Lab</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>1</td>
-          <td>AB</td>
-        </tr>
-        <tr>
-          <td>3ME151</td>
-          <td>Engineering Graphics Lab</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>1</td>
-          <td>AA</td>
-        </tr>
-        <tr>
-          <td>3EL151</td>
-          <td>Basic Electrical Engineering LAb</td>
-          <td>--</td>
-          <td>--</td>
-          <td>2</td>
-          <td>1</td>
-          <td>AB</td>
-        </tr>
+        {jsonData &&
+          jsonData.map((data) => {
+            if (data.sem === 2) {
+              return (
+                <tr>
+                  <td>{data.courseCode.toUpperCase()}</td>
+                  <td>{data.courseName}</td>
+                  <td>{data.lec === 0 ? '--' : data.lec}</td>
+                  <td>{data.tut === 0 ? '--' : data.tut}</td>
+                  <td>{data.practice === 0 ? '--' : data.practice}</td>
+                  <td>{data.creds === 0 ? '--' : data.creds}</td>
+                  <td>{data.grades === 0 ? '--' : data.grades}</td>
+                </tr>
+              )
+            }
+          })}
       </table>
       <p className='para' style={{ textAlign: 'center' }}>
         $:Grade obtained in makeup examination.&nbsp; #:Grade obtaibed after
@@ -291,12 +130,12 @@ const Template = () => {
           <td>CPI</td>
         </tr>
         <tr>
-          <td>25</td>
-          <td>7.80</td>
-          <td>23</td>
-          <td>8.09</td>
-          <td>48</td>
-          <td>7.94</td>
+          <td>{jsonData[0].semCreds}</td>
+          <td>{jsonData[0].semSPI}</td>
+          <td>{jsonData[13].semCreds}</td>
+          <td>{jsonData[13].semSPI}</td>
+          <td>{jsonData[0].creadEarned}</td>
+          <td>{jsonData[0].cpi}</td>
         </tr>
       </table>
       <div className='name'>

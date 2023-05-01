@@ -3,7 +3,11 @@ import './ShowTranscript.css'
 import DocViewer, { DocViewerRenderers } from '@cyntler/react-doc-viewer'
 
 const ShowTranscript = () => {
-  const docs = [{ uri: require('../pdf/file.pdf') }]
+  const docs = [
+    {
+      uri: 'http://localhost:5000/uploads/user-1682951693428-1682951693428.png',
+    },
+  ]
 
   return (
     <>

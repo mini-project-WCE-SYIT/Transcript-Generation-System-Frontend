@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 
-export default function UploadFiles() {
+export default function UploadFiles({ onImageDataChange }) {
   // {
   //   name: '',
   //   yearSem: '',
@@ -45,11 +45,12 @@ export default function UploadFiles() {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal Shah',
+                  name: 'Prajwal',
                   yearSem: 'sem1',
                   image: e.target.files[0],
                 },
               ])
+              onImageDataChange(formData)
             }}
           />
         </Grid>
@@ -66,11 +67,12 @@ export default function UploadFiles() {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal Shah',
+                  name: 'Prajwal',
                   yearSem: 'sem1',
                   image: e.target.files[0],
                 },
               ])
+              onImageDataChange(formData)
             }}
           />
         </Grid>
@@ -105,7 +107,7 @@ export default function UploadFiles() {
                   setFormData([
                     ...formData,
                     {
-                      name: 'Prajwal Shah',
+                      name: 'Prajwal',
                       yearSem: 'sem1',
                       image: e.target.files[0],
                     },
@@ -129,11 +131,12 @@ export default function UploadFiles() {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal Shah',
+                  name: 'Prajwal',
                   yearSem: 'sem1',
                   image: e.target.files[0],
                 },
               ])
+              onImageDataChange(formData)
             }}
           />
         </Grid>
@@ -150,11 +153,12 @@ export default function UploadFiles() {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal Shah',
+                  name: 'Prajwal',
                   yearSem: 'sem1',
                   image: e.target.files[0],
                 },
               ])
+              onImageDataChange(formData)
             }}
           />
         </Grid>
@@ -188,7 +192,7 @@ export default function UploadFiles() {
                   setFormData([
                     ...formData,
                     {
-                      name: 'Prajwal Shah',
+                      name: 'Prajwal',
                       yearSem: 'sem1',
                       image: e.target.files[0],
                     },
@@ -212,11 +216,12 @@ export default function UploadFiles() {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal Shah',
+                  name: 'Prajwal',
                   yearSem: 'sem1',
                   image: e.target.files[0],
                 },
               ])
+              onImageDataChange(formData)
             }}
           />
         </Grid>
@@ -233,11 +238,12 @@ export default function UploadFiles() {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal Shah',
+                  name: 'Prajwal',
                   yearSem: 'sem1',
                   image: e.target.files[0],
                 },
               ])
+              onImageDataChange(formData)
             }}
           />
         </Grid>
@@ -272,7 +278,7 @@ export default function UploadFiles() {
                   setFormData([
                     ...formData,
                     {
-                      name: 'Prajwal Shah',
+                      name: 'Prajwal',
                       yearSem: 'sem1',
                       image: e.target.files[0],
                     },
@@ -296,11 +302,12 @@ export default function UploadFiles() {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal Shah',
+                  name: 'Prajwal',
                   yearSem: 'sem1',
                   image: e.target.files[0],
                 },
               ])
+              onImageDataChange(formData)
             }}
           />
         </Grid>
@@ -317,11 +324,12 @@ export default function UploadFiles() {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal Shah',
+                  name: 'Prajwal',
                   yearSem: 'sem1',
                   image: e.target.files[0],
                 },
               ])
+              onImageDataChange(formData)
             }}
           />
         </Grid>
@@ -355,7 +363,7 @@ export default function UploadFiles() {
                   setFormData([
                     ...formData,
                     {
-                      name: 'Prajwal Shah',
+                      name: 'Prajwal',
                       yearSem: 'sem1',
                       image: e.target.files[0],
                     },

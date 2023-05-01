@@ -19,6 +19,7 @@ import UploadFiles from './UploadFiles'
 import Review from './Review'
 import Wcelogo from '../components/wcelogo.png'
 import './Checkout.css'
+import * as API from '../API/FormRequest'
 
 function Copyright() {
   return (
@@ -54,13 +55,19 @@ export default function Checkout() {
     yesOrignals: '',
     yesForPhotos: '',
   })
-
+  const [imageData, setImageData] = React.useState([
+    {
+      name: '',
+      yearSem: '',
+      image: null,
+    },
+  ])
   function getStepContent(step) {
     switch (step) {
       case 0:
         return <AddressForm onFormDataChange={setFormData} />
       case 1:
-        return <UploadFiles />
+        return <UploadFiles onImageDataChange={setImageData} />
       case 2:
         return <Review />
       default:
@@ -85,9 +92,23 @@ export default function Checkout() {
   }
   const [activeStep, setActiveStep] = React.useState(0)
 
+  const UploadImage = async () => {
+    for (let i = 1; i < imageData.length; ++i) {
+      const formData = new FormData()
+      formData.append('image', imageData[i].image)
+      formData.append('name', imageData[i].name)
+      formData.append('yearSem', imageData[i].yearSem)
+      console.log(imageData[i])
+      console.log(formData)
+      const res = await API.uploadFile(formData)
+    }
+  }
   const handleNext = () => {
     dispatch(createTranscript(formData))
     setActiveStep(activeStep + 1)
+    if (activeStep === 1) {
+      UploadImage()
+    }
   }
 
   const handleBack = () => {

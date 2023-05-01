@@ -7,4 +7,4 @@ export const createTranscript = (formData) =>
 
 export const getAllApplicants = () => API.get('/getallapplications')
 
-export const uploadFile = () => API.post('/upload')
+export const uploadFile = (data) => API.post('/upload', data)

@@ -6,15 +6,23 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 
 export default function UploadFiles() {
+  // {
+  //   name: '',
+  //   yearSem: '',
+  //   image: null,
+
+  // }
   const [reExam1, setReExam1] = React.useState('no')
   const [reExam2, setReExam2] = React.useState('no')
   const [reExam3, setReExam3] = React.useState('no')
   const [reExam4, setReExam4] = React.useState('no')
-  const [formData, setFormData] = React.useState({
-    name: '',
-    yearSem: '',
-    image: null,
-  })
+  const [formData, setFormData] = React.useState([
+    {
+      name: '',
+      yearSem: '',
+      image: null,
+    },
+  ])
   React.useEffect(() => {
     console.log(formData)
   }, [formData])
@@ -32,19 +40,39 @@ export default function UploadFiles() {
             id='Sem1'
             name='sem1'
             fullWidth
-            value={formData.image}
+            value={formData[0].image}
             onChange={(e) => {
-              setFormData({
-                name: 'Prajwal Shah',
-                yearSem: 'asdfasd',
-                image: e.target.files[0],
-              })
+              setFormData([
+                ...formData,
+                {
+                  name: 'Prajwal Shah',
+                  yearSem: 'sem1',
+                  image: e.target.files[0],
+                },
+              ])
             }}
           />
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography variant='subtitle1'>SEM-2</Typography>
-          <TextField required type='file' id='Sem2' name='sem2' fullWidth />
+          <TextField
+            required
+            type='file'
+            id='Sem2'
+            name='sem2'
+            fullWidth
+            value={formData[0].image}
+            onChange={(e) => {
+              setFormData([
+                ...formData,
+                {
+                  name: 'Prajwal Shah',
+                  yearSem: 'sem1',
+                  image: e.target.files[0],
+                },
+              ])
+            }}
+          />
         </Grid>
         <Grid item xs={12}>
           <FormControlLabel
@@ -67,18 +95,68 @@ export default function UploadFiles() {
           <>
             <Grid item xs={12} md={6}>
               <Typography variant='subtitle1'>Re-Exam-1</Typography>
-              <TextField required type='file' id='reExam1' fullWidth />
+              <TextField
+                required
+                type='file'
+                id='reExam1'
+                fullWidth
+                value={formData[0].image}
+                onChange={(e) => {
+                  setFormData([
+                    ...formData,
+                    {
+                      name: 'Prajwal Shah',
+                      yearSem: 'sem1',
+                      image: e.target.files[0],
+                    },
+                  ])
+                }}
+              />
             </Grid>
             <Grid item xs={12} md={6}></Grid>
           </>
         )}
         <Grid item xs={12} md={6}>
           <Typography variant='subtitle1'>SEM-3</Typography>
-          <TextField required type='file' id='Sem3' name='sem3' fullWidth />
+          <TextField
+            required
+            type='file'
+            id='Sem3'
+            name='sem3'
+            fullWidth
+            value={formData[0].image}
+            onChange={(e) => {
+              setFormData([
+                ...formData,
+                {
+                  name: 'Prajwal Shah',
+                  yearSem: 'sem1',
+                  image: e.target.files[0],
+                },
+              ])
+            }}
+          />
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography variant='subtitle1'>SEM-4</Typography>
-          <TextField required type='file' id='Sem4' name='sem4' fullWidth />
+          <TextField
+            required
+            type='file'
+            id='Sem4'
+            name='sem4'
+            fullWidth
+            value={formData[0].image}
+            onChange={(e) => {
+              setFormData([
+                ...formData,
+                {
+                  name: 'Prajwal Shah',
+                  yearSem: 'sem1',
+                  image: e.target.files[0],
+                },
+              ])
+            }}
+          />
         </Grid>
         <Grid item xs={12}>
           <FormControlLabel
@@ -100,18 +178,68 @@ export default function UploadFiles() {
           <>
             <Grid item xs={12} md={6}>
               <Typography variant='subtitle1'>Re-Exam-2</Typography>
-              <TextField required type='file' id='reExam2' fullWidth />
+              <TextField
+                required
+                type='file'
+                id='reExam2'
+                fullWidth
+                value={formData[0].image}
+                onChange={(e) => {
+                  setFormData([
+                    ...formData,
+                    {
+                      name: 'Prajwal Shah',
+                      yearSem: 'sem1',
+                      image: e.target.files[0],
+                    },
+                  ])
+                }}
+              />
             </Grid>
             <Grid item xs={12} md={6}></Grid>
           </>
         )}
         <Grid item xs={12} md={6}>
           <Typography variant='subtitle1'>SEM-5</Typography>
-          <TextField required type='file' id='Sem5' name='sem5' fullWidth />
+          <TextField
+            required
+            type='file'
+            id='Sem5'
+            name='sem5'
+            fullWidth
+            value={formData[0].image}
+            onChange={(e) => {
+              setFormData([
+                ...formData,
+                {
+                  name: 'Prajwal Shah',
+                  yearSem: 'sem1',
+                  image: e.target.files[0],
+                },
+              ])
+            }}
+          />
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography variant='subtitle1'>SEM-6</Typography>
-          <TextField required type='file' id='Sem6' name='sem6' fullWidth />
+          <TextField
+            required
+            type='file'
+            id='Sem6'
+            name='sem6'
+            fullWidth
+            value={formData[0].image}
+            onChange={(e) => {
+              setFormData([
+                ...formData,
+                {
+                  name: 'Prajwal Shah',
+                  yearSem: 'sem1',
+                  image: e.target.files[0],
+                },
+              ])
+            }}
+          />
         </Grid>
 
         <Grid item xs={12}>
@@ -134,18 +262,68 @@ export default function UploadFiles() {
           <>
             <Grid item xs={12} md={6}>
               <Typography variant='subtitle1'>Re-Exam-3</Typography>
-              <TextField required type='file' id='reExam3' fullWidth />
+              <TextField
+                required
+                type='file'
+                id='reExam3'
+                fullWidth
+                value={formData[0].image}
+                onChange={(e) => {
+                  setFormData([
+                    ...formData,
+                    {
+                      name: 'Prajwal Shah',
+                      yearSem: 'sem1',
+                      image: e.target.files[0],
+                    },
+                  ])
+                }}
+              />
             </Grid>
             <Grid item xs={12} md={6}></Grid>
           </>
         )}
         <Grid item xs={12} md={6}>
           <Typography variant='subtitle1'>SEM-7</Typography>
-          <TextField required type='file' id='Sem7' name='sem7' fullWidth />
+          <TextField
+            required
+            type='file'
+            id='Sem7'
+            name='sem7'
+            fullWidth
+            value={formData[0].image}
+            onChange={(e) => {
+              setFormData([
+                ...formData,
+                {
+                  name: 'Prajwal Shah',
+                  yearSem: 'sem1',
+                  image: e.target.files[0],
+                },
+              ])
+            }}
+          />
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography variant='subtitle1'>SEM-8</Typography>
-          <TextField required type='file' id='Sem8' name='sem8' fullWidth />
+          <TextField
+            required
+            type='file'
+            id='Sem8'
+            name='sem8'
+            fullWidth
+            value={formData[0].image}
+            onChange={(e) => {
+              setFormData([
+                ...formData,
+                {
+                  name: 'Prajwal Shah',
+                  yearSem: 'sem1',
+                  image: e.target.files[0],
+                },
+              ])
+            }}
+          />
         </Grid>
         <Grid item xs={12}>
           <FormControlLabel
@@ -167,7 +345,23 @@ export default function UploadFiles() {
           <>
             <Grid item xs={12} md={6}>
               <Typography variant='subtitle1'>Re-Exam-4</Typography>
-              <TextField required type='file' id='reExam4' fullWidth />
+              <TextField
+                required
+                type='file'
+                id='reExam4'
+                fullWidth
+                value={formData[0].image}
+                onChange={(e) => {
+                  setFormData([
+                    ...formData,
+                    {
+                      name: 'Prajwal Shah',
+                      yearSem: 'sem1',
+                      image: e.target.files[0],
+                    },
+                  ])
+                }}
+              />
             </Grid>
             <Grid item xs={12} md={6}></Grid>
           </>

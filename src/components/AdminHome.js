@@ -163,24 +163,46 @@ function AdminHome() {
                 })}
               </div>
             </div>
-            <div className='buttonContainer'>
-              <div className='excelBtn'>
-                <label for='file-upload' class='file-upload-label'>
-                  Add Sheet
-                </label>
-                <input
-                  type='file'
-                  value={fileUpload}
-                  onChange={(e) => {
-                    setFileupload(e.target.value)
-                    handleFileUpload(e)
-                  }}
-                  id='file-upload'
-                  class='hidden'
-                />
+            <div className='mainBtnConatainer'>
+              <div className='buttonContainer'>
+                <div className='excelBtn'>
+                  <label for='file-upload' class='file-upload-label'>
+                    Mastersheet1
+                  </label>
+                  <input
+                    type='file'
+                    value={fileUpload}
+                    onChange={(e) => {
+                      setFileupload(e.target.value)
+                      handleFileUpload(e)
+                    }}
+                    id='file-upload'
+                    class='hidden'
+                  />
+                </div>
+                <div className='popUp'>
+                  <img src={popUp} alt='' />
+                </div>
               </div>
-              <div className='popUp'>
-                <img src={popUp} alt='' />
+              <div className='buttonContainer'>
+                <div className='excelBtn'>
+                  <label for='file-upload' class='file-upload-label'>
+                    Mastersheet2
+                  </label>
+                  <input
+                    type='file'
+                    value={fileUpload}
+                    onChange={(e) => {
+                      setFileupload(e.target.value)
+                      handleFileUpload(e)
+                    }}
+                    id='file-upload'
+                    class='hidden'
+                  />
+                </div>
+                <div className='popUp'>
+                  <img src={popUp} alt='' />
+                </div>
               </div>
             </div>
           </div>

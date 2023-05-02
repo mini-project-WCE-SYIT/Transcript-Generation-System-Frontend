@@ -8,3 +8,5 @@ export const createTranscript = (formData) =>
 export const getAllApplicants = () => API.get('/getallapplications')
 
 export const uploadFile = (data) => API.post('/upload', data)
+
+export const getReportDetails = (params) => API.get(`/getreports/${params._id}`)

@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 
-export default function UploadFiles({ onImageDataChange }) {
+export default function UploadFiles({ onImageDataChange, name }) {
   // {
   //   name: '',
   //   yearSem: '',
@@ -45,7 +45,7 @@ export default function UploadFiles({ onImageDataChange }) {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal',
+                  name: name,
                   yearSem: 'sem1',
                   image: e.target.files[0],
                 },
@@ -67,8 +67,8 @@ export default function UploadFiles({ onImageDataChange }) {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal',
-                  yearSem: 'sem1',
+                  name: name,
+                  yearSem: 'sem2',
                   image: e.target.files[0],
                 },
               ])
@@ -107,8 +107,8 @@ export default function UploadFiles({ onImageDataChange }) {
                   setFormData([
                     ...formData,
                     {
-                      name: 'Prajwal',
-                      yearSem: 'sem1',
+                      name: name,
+                      yearSem: 'reexam1',
                       image: e.target.files[0],
                     },
                   ])
@@ -131,8 +131,8 @@ export default function UploadFiles({ onImageDataChange }) {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal',
-                  yearSem: 'sem1',
+                  name: name,
+                  yearSem: 'sem3',
                   image: e.target.files[0],
                 },
               ])
@@ -153,8 +153,8 @@ export default function UploadFiles({ onImageDataChange }) {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal',
-                  yearSem: 'sem1',
+                  name: name,
+                  yearSem: 'sem4',
                   image: e.target.files[0],
                 },
               ])
@@ -192,8 +192,8 @@ export default function UploadFiles({ onImageDataChange }) {
                   setFormData([
                     ...formData,
                     {
-                      name: 'Prajwal',
-                      yearSem: 'sem1',
+                      name: name,
+                      yearSem: 'reexam2',
                       image: e.target.files[0],
                     },
                   ])
@@ -216,8 +216,8 @@ export default function UploadFiles({ onImageDataChange }) {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal',
-                  yearSem: 'sem1',
+                  name: name,
+                  yearSem: 'sem5',
                   image: e.target.files[0],
                 },
               ])
@@ -238,8 +238,8 @@ export default function UploadFiles({ onImageDataChange }) {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal',
-                  yearSem: 'sem1',
+                  name: name,
+                  yearSem: 'sem6',
                   image: e.target.files[0],
                 },
               ])
@@ -278,8 +278,8 @@ export default function UploadFiles({ onImageDataChange }) {
                   setFormData([
                     ...formData,
                     {
-                      name: 'Prajwal',
-                      yearSem: 'sem1',
+                      name: name,
+                      yearSem: 'reexam3',
                       image: e.target.files[0],
                     },
                   ])
@@ -302,8 +302,8 @@ export default function UploadFiles({ onImageDataChange }) {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal',
-                  yearSem: 'sem1',
+                  name: name,
+                  yearSem: 'sem7',
                   image: e.target.files[0],
                 },
               ])
@@ -324,8 +324,8 @@ export default function UploadFiles({ onImageDataChange }) {
               setFormData([
                 ...formData,
                 {
-                  name: 'Prajwal',
-                  yearSem: 'sem1',
+                  name: name,
+                  yearSem: 'sem8',
                   image: e.target.files[0],
                 },
               ])
@@ -363,8 +363,8 @@ export default function UploadFiles({ onImageDataChange }) {
                   setFormData([
                     ...formData,
                     {
-                      name: 'Prajwal',
-                      yearSem: 'sem1',
+                      name: name,
+                      yearSem: 'reexam4',
                       image: e.target.files[0],
                     },
                   ])

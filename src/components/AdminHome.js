@@ -12,74 +12,18 @@ function AdminHome() {
   const [applicants, setApplicants] = React.useState([])
   const [fileUpload, setFileupload] = React.useState()
   const [jsonData, setJsonData] = React.useState([])
+  const [clickedId, setClickedId] = React.useState(null)
   const [geneTranscript, setGeneTranscript] = React.useState(false)
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0]
     const reader = new FileReader()
 
-    // reader.onload = (event) => {
-    //   const binaryData = event.target.result
-    //   const workbook = XLSX.read(binaryData, { type: 'binary' })
-    //   const sheetName = workbook.SheetNames[0]
-    //   const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
-    //   let sem = ''
-    //   let name = ''
-    //   let exam = ''
-    //   let semCreds = ''
-    //   let semSPI = ''
-    //   let creadEarned = ''
-    //   let cpi = ''
-    //   let Year = ''
-    //   sheetData.map((data) => {
-    //     if (data.sem) {
-    //       sem = data.sem
-    //     } else {
-    //       data.sem = sem
-    //     }
-    //     if (data.Name) {
-    //       name = data.Name
-    //     } else {
-    //       data.Name = name
-    //     }
-    //     if (data.Examseat) {
-    //       exam = data.Examseat
-    //     } else {
-    //       data.Examseat = exam
-    //     }
-    //     if (data.semCreds) {
-    //       semCreds = data.semCreds
-    //     } else {
-    //       data.semCreds = semCreds
-    //     }
-    //     if (data.semSPI) {
-    //       semSPI = data.semSPI
-    //     } else {
-    //       data.semSPI = semSPI
-    //     }
-    //     if (data.creadEarned) {
-    //       creadEarned = data.creadEarned
-    //     } else {
-    //       data.creadEarned = creadEarned
-    //     }
-    //     if (data.cpi) {
-    //       cpi = data.cpi
-    //     } else {
-    //       data.cpi = cpi
-    //     }
-    //     if (data.Year) {
-    //       Year = data.Year
-    //     } else {
-    //       data.creadEarned = Year
-    //     }
-    //   })
-    //   setJsonData(sheetData)
-    // }
-
     reader.readAsBinaryString(file)
   }
 
-  const generateTranscript = () => {
+  const generateTranscript = (_id) => {
+    setClickedId(_id)
     setGeneTranscript(true)
   }
   // Next button
@@ -101,7 +45,7 @@ function AdminHome() {
   if (geneTranscript) {
     return (
       <>
-        <ShowTranscript />
+        <ShowTranscript _id={clickedId} />
       </>
     )
   } else {
@@ -151,7 +95,10 @@ function AdminHome() {
                 </div>
                 {applicants.map((applicant) => {
                   return (
-                    <div className='home-content' onClick={generateTranscript}>
+                    <div
+                      className='home-content'
+                      onClick={() => generateTranscript(applicant._id)}
+                    >
                       <div className='subtitle sub-one'>{++count} </div>
                       <div className='subtitle sub-one'>{applicant.prn} </div>
                       <div className='subtitle sub-two'>

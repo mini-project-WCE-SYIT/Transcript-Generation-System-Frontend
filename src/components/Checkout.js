@@ -67,7 +67,12 @@ export default function Checkout() {
       case 0:
         return <AddressForm onFormDataChange={setFormData} />
       case 1:
-        return <UploadFiles onImageDataChange={setImageData} />
+        return (
+          <UploadFiles
+            onImageDataChange={setImageData}
+            name={formData.firstName}
+          />
+        )
       case 2:
         return <Review />
       default:

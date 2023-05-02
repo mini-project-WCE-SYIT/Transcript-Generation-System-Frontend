@@ -12,6 +12,7 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import Wcelogo from '../wcelogo.png'
+import * as Action from '../../actions/AuthAction'
 
 const pages = ['Open', 'Closed', 'Feed']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
@@ -19,7 +20,9 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 const Appbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
-
+  const handleOnclick = () => {
+    Action.logOut()
+  }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -155,7 +158,9 @@ const Appbar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign='center'>{setting}</Typography>
+                  <Typography textAlign='center' onClick={handleOnclick}>
+                    {setting}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>

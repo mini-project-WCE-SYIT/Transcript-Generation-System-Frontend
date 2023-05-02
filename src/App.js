@@ -11,21 +11,14 @@ import Template2 from './templates/Template2'
 import ShowTranscript from './components/ShowTranscript'
 
 const App = () => {
-  const user = useSelector((state) => state)
-  const [role, setRole] = useState('')
-  useEffect(() => {
-    if (user.authReducer.authData) {
-      console.log(user.authReducer.authData.data.role)
-      const myRole = user.authReducer.authData.data.role
-      setRole(myRole)
-    }
-  }, [user])
+  const role = useSelector((state) => state.authReducer.authData?.data.role)
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path='/'
-          element={role === 'admin' ? <Navigate to='/admin/home' /> : <Login />}
+          element={role ? <Navigate to='/admin/home' /> : <Login />}
         />
         <Route exact path='/form' element={<Checkout />} />
         <Route exact path='/procedure' element={<Procedure />} />

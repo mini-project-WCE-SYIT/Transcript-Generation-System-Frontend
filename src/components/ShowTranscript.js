@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ShowTranscript.css'
 import DocViewer, { DocViewerRenderers } from '@cyntler/react-doc-viewer'
+import * as API from '../API/FormRequest'
 
-const ShowTranscript = () => {
-  const docs = [{ uri: require('../pdf/file.pdf') }]
+const ShowTranscript = ({ _id }) => {
+  const [docs, setDocs] = useState([])
+  const fetch = async () => {
+    console.log(_id)
+    const res = await API.getReportDetails({ _id })
+    console.log(res.data.report)
+    setDocs(
+      res.data.report.map((report) => {
+        return { uri: report.imageURL }
+      })
+    )
+  }
 
+  useEffect(() => {
+    fetch()
+  }, [])
+
+  console.log(docs)
   return (
     <>
       <div className='transcriptMain'>
